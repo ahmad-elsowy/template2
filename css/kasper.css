@@ -1,0 +1,1162 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Work Sans', sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+:root{  
+    --main-color:#00c7fc;
+    --padding-section:60px;
+    --main-line-height:1.8;
+    --transparent-color: rgb(0 0 0 / 50%);
+    --second-color :#00c7fc69;
+}
+
+
+/* ----------------------------special header------------------------------ */
+
+
+.special-header h2{
+    font-size: 35px;
+    font-weight: 300;
+    letter-spacing: -3px;
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+}
+ .special-header h2::before{
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 2px;
+    background-color: black;
+    bottom: -20px;
+    left: 10%;
+}
+ .special-header h2::after{
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: white;
+    bottom: -27.5px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 2px solid black;
+}
+ .special-header p{
+    line-height: 1.8;
+    font-size: 15px;
+    width: 600px;
+    text-align: center;
+    margin: 50px auto;
+    color: #777;
+}
+/* ------------------------------------------------- */
+.container{ 
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: auto;
+}
+/* small  screen*/
+@media (min-width:768px){
+    .container{
+        width: 750px;
+    }
+}
+/* medium  screen*/
+@media (min-width:992px){
+    .container{
+        width: 970px;
+    }
+}
+/* large  screen*/
+@media (min-width:1200px){
+    .container{
+        width: 1170px;
+    }
+}
+/* -----------------------------------start header-------------- */
+
+.header{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+.header .container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    min-height: 100px;
+}
+.header .container::before{
+    content: "";
+    position: absolute;
+    width: calc(100% - 60px);
+    height: 2px;
+    background-color: white;
+    bottom: 0px;
+    left: 30px;
+    z-index: -1;
+}
+.header .container .logo{
+    width: 150px;
+    height: 60px;
+ }
+.header .container .logo img{
+    max-width: 100%;
+}
+.header .container .sections{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-basis: 50%;
+}
+.header .container .sections .toggle-menu{
+    font-size: 23px;
+    color: white;
+}
+.header .container .sections .lists{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+.header .container .sections .lists li a{  
+    display: block;
+    padding: 40px 10px;
+    text-decoration: none;
+    color: white;
+}
+.header .container .sections .lists li a:hover ,
+.header .container .sections .lists a.active{  
+    border-bottom: 2px solid var(--main-color);
+    color: var(--main-color);
+    
+}
+.header .container .sections .searchIcon{
+    font-size: 23px;
+    margin: 0 15px 0 40px;
+    position: relative;
+    color: white;
+}
+.header .container .sections .searchIcon::before{
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background-color: var(--main-color);
+    top: 0;
+    left: -23px;
+}
+
+@media (min-width:767px){
+    .header .container .sections .toggle-menu{
+        display: none;
+    }
+}
+@media (max-width:767px){
+    .header .container .sections .lists{
+        display: none;
+    }
+    .header .container .sections .toggle-menu:hover + ul{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        width: 100%;
+        background-color: rgba(54, 50, 50, 0.5);
+        z-index: 2;
+    }
+    .header .container .sections .lists li a{
+        padding-left: 15px; 
+    }
+
+}
+/* -------------------------------------- End header------------------------ */
+/* -------------------------------------- start Landing------------------------ */
+.landing{
+    min-height: 100vh;
+    background-image: url(../images/landing.webp);
+    background-color: #1f2021;
+    background-size: cover;
+    position: relative;
+}
+.landing .overlay{ 
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color:var(--transparent-color);
+}
+.landing .text{
+    width: 65%;
+    height: 350px;
+    background-color: var(--second-color);
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+}
+.landing .text .title{
+    width: 60%;
+    font-size: 28px;
+    line-height: var(--main-line-height);
+    font-weight: 500;
+    margin: 0 40px 0 0;
+}
+
+.landing .text p{
+    line-height: 2.5;
+    font-size: 11px;
+    width: 60%;
+    margin: 20px 40px 0 0;
+}
+.landing .rl-icon{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    width: 100%;
+}
+.landing .rl-icon .change-left{
+    margin-left: 10px;
+}
+.landing .rl-icon .change-right{
+    margin-right: 10px;
+}
+.landing .circles{
+    display: flex;
+    transform: translateX(-50%);
+    bottom: 30px;
+    left: 50%;
+    position: absolute;   
+}
+.landing .circles div{
+    margin: 0 2px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.landing .circles .active{
+background-color: var(--main-color);
+border-color: var(--main-color);
+}
+@media (max-width:767px) {
+    .landing .text{
+        width: 100%;
+        padding: 0 30px ;
+        height: 75%;
+    }
+    .landing .text .title{
+        width: 100%; 
+        font-size: 30px;  
+    }
+    .landing .text p{
+        width: 100%;
+        font-size: 13px;
+    }
+    .landing .rl-icon{
+        display: none;
+    }
+}
+/* --------------------------------------- End Landing--------------------------*/
+/* --------------------------------------- start services--------------------------*/
+.services{
+    padding-top: var(--padding-section);
+    padding-bottom: var(--padding-section);
+}
+.services .container .boxes{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(450px,1fr));
+    gap: 30px;
+}
+.services .container .boxes .box{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px;
+    justify-content: center;
+    /* align-items: center; */
+}
+.services .container .boxes .box i{
+    font-size: 30px;
+    margin-right: 25px;
+}
+.services .container .boxes .box .text{
+    flex-basis: calc(100% - 60px);
+    /* text-align: center; */
+}
+.services .container .boxes .box .text h3{
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var;
+    color: var(--main-color);
+}
+.services .container .boxes .box .text p{
+    line-height: var(--main-line-height);
+    font-size: 14px;
+    color: #777;
+}
+@media (max-width:991px) {
+    .services .container .boxes .box{
+        flex-direction: column;
+        align-items: center;
+    }
+    .services .container .boxes .box .text{
+        text-align: center;
+    }
+    .services .container .boxes .box i{
+        margin-bottom: 20px;
+        font-size: 35px;
+    }
+    .services .container .boxes .box .text h3{
+        font-size: 23px;
+    }
+    .services .container .boxes .box .text p{
+        line-height: var(--main-line-height);
+        font-size: 19px;
+    }
+}
+/* --------------------------------------- End services--------------------------*/
+/* ---------------------------------------------- start design----------------------------- */
+.design{
+    padding-top: var(--padding-section);
+    padding-bottom: var(--padding-section);
+    background-image: url(../images/designBackground.webp);
+    background-size: cover;
+    height: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: h;
+    overflow: hidden;
+}
+
+.design::before{
+    content: " ";
+    position: absolute;
+    background-color: var(--transparent-color);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.design .image{
+    z-index: 1;
+    position: relative;
+    flex: 1;
+    text-align: center;
+}
+
+.design .image img{
+    position: relative;
+    bottom: -150px;
+}
+.design .text{
+    width: 50%;
+    padding: 15px;
+    background-color: var(--second-color);
+    z-index: 1;
+    flex: 1;
+}
+.design .text h3{
+    color: white;
+    font-size: 19px;
+    padding: 20px;
+    font-weight: 400;
+}
+.design .text ul{
+    list-style: none;
+    padding: 20px;
+    margin: 0;
+}
+.design .text ul li{
+    padding: 20px 0;
+    color: white;
+
+}
+.design .text ul li::before{
+    font-family: "Font Awesome 5 Free";
+    content: "\f390";
+    font-weight: 900;
+    margin-right: 20px;
+}
+@media (max-width:767px) {
+    .design .image{
+        display: none;
+    }
+}
+
+/* ---------------------------------------------- end design----------------------------- */
+/* --------------------------------------------- start portfolio---------------------------- */
+.portfolio{
+    padding-top: var(--padding-section);
+    padding-bottom: var(--padding-section);
+}
+
+.portfolio ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.portfolio ul li{
+    margin-right: 20px;
+    padding: 10px;
+}
+.portfolio ul li.active{
+    background-color: var(--main-color);
+}
+.portfolio .boxes{
+    padding-top: var(--padding-section);
+    padding-bottom: calc(var(--padding-section) - 30px);
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(350px,1fr));
+}
+.portfolio .boxes .box{
+    position: relative;
+    overflow: hidden;
+}
+.portfolio .boxes .box:hover  .text{
+    display: block;
+    z-index: 2;
+}
+.portfolio .boxes .box:hover img:first-child{  
+    transform:rotate(3deg) scale(1.1);
+}
+.portfolio .boxes .box img{
+    max-width: 100%;
+    transition: 0.3s;
+}
+
+.portfolio .boxes .box .text{
+    background-color: white;
+    padding: 20px;
+    display: none;
+    position: absolute;
+    width: 100%;
+    bottom: -50%;
+    left: 0;
+
+    animation-name: text-appear;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+.portfolio .boxes .box .text h4{
+    font-size: 20px;
+    font-weight: 400;
+}
+.portfolio .boxes .box .text p{
+    padding-top: 15px;
+    color: var(--main-color);
+    font-size: 20px;
+    font-weight: 400;
+} 
+.portfolio .pad{
+    padding-bottom:var(--padding-section) ;
+}
+.portfolio .more{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 400;
+    color: white;
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    padding: 10px 20px;
+    background-color: var(--main-color);
+}
+@keyframes text-appear {
+    0%{
+        bottom: -50%;
+    }
+    100%{
+        bottom: 0;
+    }
+}
+
+/* ---------------------------------------------- End portfolio---------------------------- */
+/* ---------------------------------------------- start awesome-video---------------------------- */
+.awesome-video{
+    position: relative;
+}
+
+.awesome-video::before{
+    content: "";
+    position: absolute;
+    top:0;
+    left: 0;
+    background-color: var(--transparent-color);
+    width: 100%;
+    height: 100%;
+}
+.awesome-video video{
+    width: 100%;
+    background-size: cover;
+}
+.awesome-video .text{
+    position: absolute;
+    background-color: var(--main-color);
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    text-align: center;
+}
+.awesome-video .text h2{
+    padding: 40px;
+    font-size: 30px;
+    font-weight: 400;
+    color: white;
+    letter-spacing: -2px;
+}
+.awesome-video .text p{
+    color: white;
+    padding-bottom: 40px;
+    font-size: 20px;
+}
+.awesome-video .text button{
+    margin-bottom: 40px;
+    text-decoration: none;
+    border: none;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+/* ---------------------------------------------- end awesome-video---------------------------- */
+/* ---------------------------------------------- end about---------------------------- */
+.about{
+    padding-top: var(--padding-section);
+}
+.about .container{
+    text-align: center;
+}
+.about .container .image{
+    position: relative;
+    overflow: hidden;
+    margin-top: -120px;
+}
+.about .container .image img{
+    max-width: 100%;
+    position: relative;
+    bottom: -150px;
+}
+@media (max-width:767px) {
+    .about .container .image{     
+    margin-top: -90px;
+    }
+    about .container .image img{     
+       bottom: -100px;
+    }
+}
+
+/* ---------------------------------------------- end about---------------------------- */
+/* ---------------------------------------------- start stats----------------------------- */
+.stats{
+    background-image: url(../images/stats.png);
+    background-size: cover;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.stats::before{
+    content: "";
+    position: absolute;
+    width: 100%;    
+    height: 100%;   
+    left: 0;
+    top: 0;
+    background-color: var(--transparent-color);
+}
+.stats .container{
+    z-index: 1;
+}
+.stats .container .boxes{
+    display: flex;
+    background-color: var(--second-color);
+    margin: 60px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.stats .container .boxes .box{ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 25%;
+}
+
+.stats .container .boxes .box i{
+    font-size: 30px;
+    padding-top: 30px;
+    color: black;
+}
+.stats .container .boxes .box span{
+    color: white;
+    font-size: 50px;
+    font-weight: 500;
+    padding-top: 30px;
+}
+.stats .container .boxes .box p{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+@media (max-width:992px) {
+    .stats .container .boxes .box{
+        flex-basis: 50%;
+    }
+}
+@media (max-width:767px) {
+    .stats .container .boxes .box{
+        flex-basis: 100%;
+    }
+}
+/* ---------------------------------------------- end stats----------------------------- */
+/* ---------------------------------------------- start skill----------------------------- */
+.skill{
+    padding-top: var(--padding-section);
+    padding-bottom: var(--padding-section);
+}
+.skill .container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    column-gap: 80px;
+}
+.skill .container .testimonials{
+    display: flex;
+    flex-basis: 50%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.skill .container .testimonials h3{   
+    padding-top: 20px;
+    font-size: 17px;
+    font-weight: 400;
+}
+.skill .container .testimonials h3 + p{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+    font-size: 15px;
+    color: #777;
+    line-height: var(--main-line-height);
+}
+.skill .container .testimonials .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.skill .container .testimonials .content .cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 13px;
+}
+.skill .container .testimonials .content .cont img{
+    width: 100px;
+    border-radius: 50%;
+    margin-right: 30px;
+}
+.skill .container .testimonials .content .cont .text{
+    border-bottom: 2px solid #777;
+    padding-bottom: 30px;
+}
+.skill .container .testimonials .content .cont .text p{
+    line-height: var(--main-line-height);
+    text-align: left;
+    padding: 10px 0;
+
+}
+.skill .container .testimonials .content .cont .text h4{
+    text-align: -webkit-right;
+    font-size: 14px;
+    font-weight: 400;
+    color: #777;
+}
+
+.skill .container .testimonials .circles{  
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.skill .container .testimonials .circles div{
+    margin-right: 10px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 1px solid #777;
+}
+.skill .container .testimonials .circles .active{
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+
+.skill .container .skills{
+    flex-basis: 50%;
+    display: flex;
+    flex-basis: 50%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    
+}
+.skill .container .skills h3{
+    padding-top: 20px;
+    font-size: 17px;
+    font-weight: 400;
+}
+.skill .container .skills p{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+    font-size: 15px;
+    color: #777;
+    line-height: var(--main-line-height);
+}
+.skill .container .skills .progress-holder{
+    width: 100%;
+    padding-top: 40px;
+}
+.skill .container .skills .progress-holder h4{
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: -1px;
+    padding: 10px 0;
+}
+.skill .container .skills .progress-holder .prog{
+    width: 100%;
+    height: 30px;
+    background-color: #dadedc;
+    
+}
+.skill .container .skills .progress-holder span{
+    background-color: var(--main-color);
+    display: block;
+    height: 100%;
+    position: relative;
+}
+.skill .container .skills .progress-holder span::before{
+    content: attr(data-progress);
+    position: absolute;
+    color: white;
+    background-color: black;
+    border-radius: 4px;
+    right: -20px;
+    padding: 2px;
+    width: 40px;
+    text-align: center;
+    top: -40px; 
+}
+.skill .container .skills .progress-holder span::after{
+    content: "";
+    position: absolute;
+    height: px;
+    border: 10px solid;
+    border-color: black transparent transparent transparent;
+    top: -20px;
+    right: -10px;
+}
+
+@media (max-width:992px) {
+    .skill .container{
+        flex-direction: column;
+    }
+}
+@media (max-width:767px) {
+    .skill .container .testimonials .content .cont{
+        flex-direction: column;
+    }
+    .skill .container .testimonials .content .cont .text{
+        padding-top: 30px;
+    }
+    .skill .container .testimonials .content .cont .text p{
+        text-align: center;
+    }
+    .skill .container .testimonials .content .cont .text h4{
+       display: none;
+    }
+}
+/* ---------------------------------------------- end skill----------------------------- */
+/* ---------------------------------------------- start quote----------------------------- */
+.quote{
+    padding-top: var(--padding-section);
+    padding-bottom: var(--padding-section);
+    /* background-color: rebeccapurple; */
+    background-image: url(../images/quote.jpg);
+    position: relative;
+    background-size: cover;
+}
+.quote::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;    
+    background-color: var(--transparent-color);
+}
+.quote .container .text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   
+   
+}
+.quote .container .text q{
+    font-size: 25px;
+    text-align: center;
+    line-height: var;
+    line-height: var(--main-line-height);
+    padding: 15px;
+    color: white;
+    z-index: 1;
+}
+.quote .container .text h5{
+    font-weight: 500;
+    color: white;
+    z-index: 1;
+}
+
+/* ---------------------------------------------- end quote----------------------------- */
+/* ---------------------------------------------- start pricing----------------------------- */
+.pricing{
+    padding-top: var(--padding-section);
+    padding-bottom: var(--padding-section);
+}
+.pricing .container .boxes{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+    gap: 30px;
+}
+.pricing .container .boxes .box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid;
+    border-color: var(--main-color);
+    padding: 20px 0;
+    background-color: #fcfcfc;
+}
+.pricing .container .boxes .box .title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.pricing .container .boxes .box .title h3{
+    font-size: 15px;
+    font-weight: 500;
+    padding: 25px;
+}
+.pricing .container .boxes .box .title .number{
+    padding-bottom: 25px;
+    font-size: 40px;
+    font-weight: bold;
+    position: relative;
+}
+.pricing .container .boxes .box .title .number::before{
+    font-family: "Font Awesome 5 Free";
+    content: "\24";
+    position: absolute;
+    font-size: 15px;
+    top: -15px;
+    left: -30px; 
+}
+.pricing .container .boxes .box .title .number::after{
+    content: "/Mo";
+    position: absolute;
+    font-size: 15px;
+    bottom: 30px;
+    right: -40px;   
+}
+.pricing .container .boxes .box ul{
+    text-align: center;
+    list-style: none;
+    border: 1px solid;
+    border-color: var(--main-color) transparent;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.pricing .container .boxes .box ul li{
+    padding: 15px 0;
+    width: 140px;
+    font-size: 15px;
+}
+.pricing .container .boxes .box ul li:not(:last-child){
+    border-bottom: 1px solid;
+    border-color: var(--main-color);
+}
+.pricing .container .boxes .box .buy{
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 15px;
+    border: 1px solid var(--main-color);
+    background-color: transparent;
+}
+.pricing .container .text{
+    text-align: center;
+    padding: 30px;
+}
+.pricing .container .text p{
+    font-size: 15px;
+    padding-bottom: 20px;
+}
+.pricing .container .text .contact{
+    padding: 10px 20px;
+    color: white;
+    background-color: var(--main-color);
+    border: none;
+    font-size: 15px;
+}
+/* ---------------------------------------------- end pricing----------------------------- */
+/* ---------------------------------------------- start subscribe----------------------------- */
+.subscribe{
+    background-image: url(../images/subscribe.jpg);
+    background-size: cover;
+    padding-top: var(--padding-section);
+    padding-bottom: var(--padding-section);
+}
+.subscribe .container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.subscribe .container .sub{
+    border: 2px solid white;
+    padding: 15px 20px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    margin-right: 40px;
+    flex-basis: 40%;
+}
+.subscribe .container .sub i{
+    font-size: 25px;
+    color: white;
+}
+.subscribe .container .sub .field{
+    border: none;
+    padding: 15px;
+    background-color: transparent;
+    font-size: 20px;
+}
+
+.subscribe .container .sub .field::placeholder{
+    color: white;
+}
+.subscribe .container .sub .field:focus{
+    caret-color: var(--main-color);
+    border: none;
+    outline: none;
+}
+.subscribe .container .sub button{ 
+    padding: 15px;
+    border: none;
+    background-color: var(--main-color);
+    color: white;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+.subscribe .container p{
+    color: white;
+    font-size: 20px;
+    line-height: 2;
+}
+@media (max-width:992px) {
+    .subscribe .container{
+        flex-direction: column;
+    }
+    .subscribe .container p{
+        margin-top: 30px;
+    }
+}
+/* ---------------------------------------------- end subscribe----------------------------- */
+/* ----------------------------------------------start contact----------------------------- */
+.contact{
+    padding-top: var(--padding-section);
+    padding-bottom: var(--padding-section);
+}
+.contact .container .boxes{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+.contact .container .boxes .fields{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    flex-basis: 70%;
+}
+.contact .container .boxes .fields [type=text]{
+    padding: 20px;
+}
+.contact .container .boxes .fields [type=text]:focus{
+    outline: none;
+}
+.contact .container .boxes .fields [ type=email]{
+    padding: 20px;
+}
+.contact .container .boxes .fields [ type=email]:focus{
+    outline: none;
+}
+.contact .container .boxes .fields textarea{
+    padding: 20px;
+    height: 200px;
+}
+.contact .container .boxes .fields textarea:focus{
+    outline: none;
+}
+.contact .container .boxes .fields [type=submit]{
+    align-self: flex-end;
+    padding: 15px 20px;  
+    color: white;
+    background-color: var(--main-color);
+    border: none;
+    outline: none;
+
+}
+.contact .container .boxes .sections{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contact .container .boxes .sections .section{
+    padding-bottom: 50px;
+}
+.contact .container .boxes .sections .section h3{
+    padding: 10px 0 30px;
+    font-weight: 400;
+}
+.contact .container .boxes .sections .section p{
+    padding-bottom: 20px;
+    color: #777;
+}
+@media (max-width:767px) {
+    .contact .container .boxes{
+        flex-direction: column;
+    }
+    .contact .container .boxes .fields{
+        order: 2;
+        width: 100%;
+    }
+    .contact .container .boxes .sections .section{
+        text-align: center;
+    }
+}
+
+/* ---------------------------------------------- start contact----------------------------- */
+/* ---------------------------------------------- start footer----------------------------- */
+.footer{
+    background-image: url(../images/subscribe.jpg);
+    position: relative;
+}
+.footer::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;   
+    top: 0;
+    left: 0;
+    background-color: var(--transparent-color);    
+}
+.footer .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.footer .container img{
+    max-width: 150px;
+    color: white;
+    padding-top: 20px;
+}
+.footer .container h2{
+    color: white;
+    font-weight: 400;
+    padding: 20px 0;
+}
+.footer .container hr{
+    height: 1px;
+    color: white;
+    background-color: white;
+    width: 200px;
+    border: none;
+    margin: 10px auto;
+}
+.footer .container ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+}
+.footer .container ul li{
+    margin: 0 20px;
+}
+.footer .container ul li i{
+    color: white;
+}
+.footer .container p{
+    padding: 30px 0;
+    color: white;
+}
+.footer .container p span{
+    color: var(--main-color);
+    font-size: 15px;
+}
+
+/* ---------------------------------------------- start footer----------------------------- */
